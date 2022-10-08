@@ -1,9 +1,26 @@
 @import url(/css/reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 
+*{
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+.clear-fix{
+    clear: both;
+}
+
+.clear-fix::after{
+    display: block;
+    content: "";
+    clear: both;
+}   
+
+/* Aside */
+
 aside{
     position: fixed;
-    right: -40px;
+    right: -38px;
     bottom: 40%;
     background-color: #1f1f1f;
     padding: 10px;
@@ -11,49 +28,44 @@ aside{
     border-top-right-radius: 4px;
     font-weight: bold;
     transform: rotate(270deg);
-
     z-index: 99999;
 }
 
+aside:hover{
+    background-color: #3a3a3a;
+    right: -35px;
+}
+
 aside a{
+    /* background-color: lightcoral; */
     text-decoration: none;
     color: white;
     font-size: 0.8rem;
 }
 
-aside:hover{
-    right: -38px;
-}
-
 aside a ion-icon{
+    /* background-color: lightgreen; */
     color: black;
     transform: rotate(90deg);
-    font-size: 1rem ;
     vertical-align: middle;
+    font-size: 1rem ;
 }
 
 #msg-wrapper{
     position: relative;
     display: inline-block;
-    background-color: yellow;
     padding: 4px;
+    background-color: #ffde00;
     width: 25px;
     height: 25px;
     border-radius: 100%;
 }
 
-#msg-wrappper{
-    display: block;
-    content: "";
-    background-color: #ffdd0057;
-    position: absolute;
-}
-
 #msg-wrapper::before{
+    position: absolute;
     display: block;
     content: "";
     background-color: #ffdd0057;
-    position: absolute;
     left: 0;
     top: 0;
     right: 0;
